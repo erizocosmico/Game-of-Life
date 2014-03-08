@@ -12,7 +12,22 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.4
+                                                      target:self
+                                                    selector:@selector(tick)
+                                                    userInfo:Nil
+                                                     repeats:YES];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+    [self.timer invalidate];
+}
+
+- (void)tick
+{
+    [self.theView tick];
+    [self.theView setNeedsDisplay:true];
 }
 
 @end

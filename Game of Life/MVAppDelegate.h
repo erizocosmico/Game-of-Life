@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MVGameView.h"
 
 @interface MVAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet MVGameView *theView;
+@property NSTimer *timer;
 
 @end
